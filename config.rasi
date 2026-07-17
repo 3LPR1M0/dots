@@ -1,0 +1,17 @@
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "BrainsMono Nerd Font 10";
+    icon-theme:                  "BrainsMono Nerd Font";
+
+}
+
+
+@theme "wol.rasi"
