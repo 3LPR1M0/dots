@@ -35,5 +35,5 @@ volume master {
 }
 
 time {
-	format = "<span background='#689d6a'>  %b %d at %H:%M   </span>"
+	format = "<span background='#458588'>  %b %d at %H:%M   </span>"
 }
