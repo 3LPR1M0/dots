@@ -2,18 +2,16 @@ set $mod Mod4
 font pango:monospace 8 
 default_border pixel 3
 gaps inner 5
-
-exec_always feh --bg-fill /home/elliot/Pictures/Wallpapers/7731877.jpg
+exec --no-startup-id xset s off -dpms
+exec_always feh --bg-fill /home/elliot/Pictures/Wallpapers/0110.jpg
 exec --no-startup-id easyeffects --gapplication-service
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 180 --primary
-exec --no-startup-id xrandr --output DP-2 --mode 1200x1920 --left-of HDMI-1 --rotate left
 
 exec --no-startup-id dex --autostart --environment i3
 
 exec_always --no-startup-id xinput set-prop "Logitech G502 HERO Gaming Mouse" "libinput Accel Profile Enabled" 0, 1, 0
 exec_always --no-startup-id xinput set-prop "Razer Razer DeathAdder V3 Pro Mouse" "libinput Accel Profile Enabled" 0, 1, 0
 
-exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status pkill -SIGUSR1 i3status
@@ -27,13 +25,12 @@ tiling_drag modifier titlebar
 
 bindsym Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
 
-bindsym $mod+q exec kitty
-bindsym $mod+e exec nautilus
-bindsym $mod+w exec qutebrowser
+bindsym $mod+q exec ghostty 
+bindsym $mod+e exec thunar
+bindsym $mod+w exec firefox 
 bindsym $mod+c kill
 
-bindsym $mod+Tab exec --no-startup-id dmenu_run
-bindsym $mod+s exec rofi -show drun
+bindsym $mod+s exec --no-startup-id dmenu_run
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -132,14 +129,10 @@ bar {
 
 
        colors {
-	background #32302f
+	background #000000
 
       # colour of border, background, and text
-	focused_workspace #fabd2f  #fabd2f  #1d2021 
-	inactive_workspace #fabd2f  #fabd2f  #1d2021
+	focused_workspace  #000000 #000000 #ffffff
+	inactive_workspace  #000000 #000000  #ffffff
 	}
 }
-
-# colour of border
-client.focused #d65d0e #d65d0e #d65d0e #d65d0e #d65d0e
-client.unfocused #d65d0e #d65d0e #d65d0e #d65d0e #d65d0e 
