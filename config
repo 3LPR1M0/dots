@@ -30,7 +30,7 @@ bindsym $mod+e exec thunar
 bindsym $mod+w exec firefox 
 bindsym $mod+c kill
 
-bindsym $mod+s exec --no-startup-id dmenu_run
+bindsym $mod+Tab exec --no-startup-id dmenu_run
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -136,3 +136,5 @@ bar {
 	inactive_workspace  #000000 #000000  #ffffff
 	}
 }
+client.focused #0000ff #0000ff #ffffff #0000ff
+client.unfocused #0000ff #0000ff #ffffff #0000ff
