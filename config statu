@@ -29,5 +29,5 @@ volume master {
 }
 
 time {
-	format = "%b %d at %H:%M"
+	format = "%b %d at %I:%M"
 }
