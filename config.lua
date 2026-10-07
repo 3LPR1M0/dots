@@ -24,7 +24,7 @@ local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 --local tags = { "", "󰊯", "", "", "󰙯", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
 
 -- Font for the status bar (use "fc-list" to see available fonts)
-local bar_font = "nerd font jetbrains-mono :style=Bold:size=10"
+local bar_font = "Maple Mono NF :style=Bold:size=10"
 
 -- Define your blocks
 -- Similar to widgets in qtile, or dwmblocks
@@ -33,8 +33,22 @@ local blocks = {
 		format = "{}",
 		command = "echo A MAN DIES WHEN HIS DREAMS ARE FORGOTTEN",
 		interval = 5,
-		color = colors.red,
+		color = colors.green,
 		underline = true,
+	}),
+	oxwm.bar.block.static({
+		text = "│",
+		interval = 999999999,
+		color = colors.lavender,
+		underline = false,
+	}),
+
+	oxwm.bar.block.shell({
+		format = "{}",
+		command = "xdotool getactivewindow getwindowname| cut -c1-50",
+		interval = 1,
+		color = colors.red,
+		underline = false,
 	}),
 	oxwm.bar.block.static({
 		text = "│",
@@ -46,7 +60,7 @@ local blocks = {
 		format = "{}",
 		date_format = "%a, %b %d - %-I:%M %P",
 		interval = 1,
-		color = colors.cyan,
+		color = colors.purple,
 		underline = true,
 	}),
 	-- Uncomment to add battery status (useful for laptops)
@@ -79,10 +93,11 @@ oxwm.set_tags(tags)
 -------------------------------------------------------------------------------
 -- Set custom symbols for layouts (displayed in the status bar)
 -- Available layouts: "tiling", "normie" (floating), "grid", "monocle", "tabbed", "dwindle"
-oxwm.set_layout_symbol("tiling", "[T]")
-oxwm.set_layout_symbol("normie", "[F]")
-oxwm.set_layout_symbol("tabbed", "[=]")
-oxwm.set_layout_symbol("dwindle", "[\\]")
+oxwm.set_layout_symbol("tiling", "[tile]")
+oxwm.set_layout_symbol("normie", "[normie]")
+oxwm.set_layout_symbol("tabbed", "[tabbed]")
+oxwm.set_layout_symbol("dwindle", "[dwindle]")
+oxwm.set_layout_symbol("scrolling", "[scrolling]")
 
 -- Example: bind dwindle (fibonacci) layout
 -- oxwm.key.bind({ modkey }, "R", oxwm.layout.set("dwindle"))
@@ -152,13 +167,13 @@ oxwm.bar.set_blocks(blocks)
 -- Parameters: foreground, background, border
 
 -- Unoccupied tags
-oxwm.bar.set_scheme_normal(colors.fg, colors.bg, "fg")
+oxwm.bar.set_scheme_normal(colors.fg, colors.bg, colors.cyan)
 -- Occupied tags
-oxwm.bar.set_scheme_occupied(colors.cyan, colors.bg, colors.cyan)
+oxwm.bar.set_scheme_occupied(colors.red, colors.bg, colors.cyan)
 -- Currently selected tag
-oxwm.bar.set_scheme_selected(colors.cyan, colors.bg, colors.purple)
+oxwm.bar.set_scheme_selected(colors.blue, colors.bg, colors.cyan)
 -- Urgent tags (windows requesting attention)
-oxwm.bar.set_scheme_urgent(colors.red, colors.bg, colors.red)
+oxwm.bar.set_scheme_urgent(colors.green, colors.bg, colors.red)
 
 -- Hide tags that have no windows and are not selected
 -- oxwm.bar.set_hide_vacant_tags(true)
