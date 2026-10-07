@@ -1,7 +1,7 @@
 set $mod Mod4
 font pango:monospace 8 
-default_border pixel 3
-gaps inner 5
+default_border pixel 0
+gaps inner 5 
 exec --no-startup-id xset s off -dpms
 exec_always feh --bg-fill /home/elliot/Pictures/Wallpapers/0110.jpg
 exec --no-startup-id easyeffects --gapplication-service
@@ -26,7 +26,7 @@ tiling_drag modifier titlebar
 bindsym Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
 
 bindsym $mod+q exec ghostty 
-bindsym $mod+e exec thunar
+bindsym $mod+e exec pcmanfm 
 bindsym $mod+w exec firefox 
 bindsym $mod+c kill
 
@@ -123,9 +123,9 @@ bindsym $mod+r mode "resize"
 
 bar {
         status_command i3status
-	  font pango:JetBrainsMono Nerd Font 10
-	workspace_min_width 40
-	padding 3px 10px 10px 3px
+	  font pango:JetBrainsMono Nerd Font 9
+	workspace_min_width 20
+	padding 2px 2px 2px 2px
 
 
        colors {
@@ -136,5 +136,3 @@ bar {
 	inactive_workspace  #000000 #000000  #ffffff
 	}
 }
-client.focused #0000ff #0000ff #ffffff #0000ff
-client.unfocused #0000ff #0000ff #ffffff #0000ff
