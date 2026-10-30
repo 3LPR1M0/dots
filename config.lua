@@ -31,9 +31,9 @@ local bar_font = "Maple Mono NF :style=Bold:size=10"
 local blocks = {
 	oxwm.bar.block.shell({
 		format = "{}",
-		command = "echo A MAN DIES WHEN HIS DREAMS ARE FORGOTTEN",
+		command = "echo A MAN ONLY DIES WHEN HE IS FORGOTTEN",
 		interval = 5,
-		color = colors.green,
+		color = colors.lavender,
 		underline = true,
 	}),
 	oxwm.bar.block.static({
@@ -43,19 +43,7 @@ local blocks = {
 		underline = false,
 	}),
 
-	oxwm.bar.block.shell({
-		format = "{}",
-		command = "xdotool getactivewindow getwindowname| cut -c1-50",
-		interval = 1,
-		color = colors.red,
-		underline = false,
-	}),
-	oxwm.bar.block.static({
-		text = "│",
-		interval = 999999999,
-		color = colors.lavender,
-		underline = false,
-	}),
+
 	oxwm.bar.block.datetime({
 		format = "{}",
 		date_format = "%a, %b %d - %-I:%M %P",
@@ -98,6 +86,8 @@ oxwm.set_layout_symbol("normie", "[normie]")
 oxwm.set_layout_symbol("tabbed", "[tabbed]")
 oxwm.set_layout_symbol("dwindle", "[dwindle]")
 oxwm.set_layout_symbol("scrolling", "[scrolling]")
+oxwm.set_layout_symbol("grid", "[grid]")
+oxwm.set_layout_symbol("monocle", "[monocle]")
 
 -- Example: bind dwindle (fibonacci) layout
 -- oxwm.key.bind({ modkey }, "R", oxwm.layout.set("dwindle"))
@@ -145,7 +135,7 @@ oxwm.gaps.set_outer(5, 5)
 -- oxwm.rule.add({ instance = "gimp", floating = true })
 -- oxwm.rule.add({ class = "Alacritty", tag = 9, focus = true })
 -- oxwm.rule.add({ class = "firefox", title = "Library", floating = true })
-oxwm.rule.add({ class = "steam", tag = 2 })
+-- oxwm.rule.add({ class = "steam", tag = 2 })
 -- oxwm.rule.add({ instance = "mpv", floating = true })
 
 -- To find window properties, use xprop and click on the window
@@ -169,7 +159,7 @@ oxwm.bar.set_blocks(blocks)
 -- Unoccupied tags
 oxwm.bar.set_scheme_normal(colors.fg, colors.bg, colors.cyan)
 -- Occupied tags
-oxwm.bar.set_scheme_occupied(colors.red, colors.bg, colors.cyan)
+oxwm.bar.set_scheme_occupied(colors.fg, colors.bg, colors.cyan)
 -- Currently selected tag
 oxwm.bar.set_scheme_selected(colors.blue, colors.bg, colors.cyan)
 -- Urgent tags (windows requesting attention)
@@ -185,6 +175,7 @@ oxwm.bar.set_scheme_urgent(colors.green, colors.bg, colors.red)
 
 oxwm.key.bind({ modkey }, "Q", oxwm.spawn_terminal())
 oxwm.key.bind({ modkey }, "W", oxwm.spawn({ "firefox" }))
+oxwm.key.bind({ modkey }, "S", oxwm.spawn({ "qutebrowser" }))
 oxwm.key.bind({ modkey }, "E", oxwm.spawn({ "pcmanfm" }))
 oxwm.key.bind({ modkey }, "Tab", oxwm.spawn({ "sh", "-c", "dmenu_run -l 10" }))
 oxwm.key.bind({ modkey }, "Print", oxwm.spawn({ "sh", "-c",
