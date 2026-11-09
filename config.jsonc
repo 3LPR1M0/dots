@@ -1,0 +1,73 @@
+// mangobar config (JSONC).
+{
+    "layer": "top",
+    "height": 10,
+    "buffer-scale": 1,
+
+    "modules-left": [
+        "workspaces",
+        "layout",
+        "window"
+    ],
+    "modules-center": [
+	"clock#time"
+    ],
+
+    "modules-right": [
+	"custom/text",
+        "network",
+	"pulseaudio",
+        "cpu",
+        "memory",
+        "tray",
+        "custom/power"
+    ],
+
+    "workspaces": {
+        "hide-empty": false,
+        "overview-label": "OVERVIEW",
+        "on-click": "activate",
+        "on-click-right": "toggle"
+    },
+    "layout": {
+        "format": "{}"
+    },
+
+    "network": {
+	"interface": "wlo1",
+	"format": " ",
+	"format-wifi": " ",
+	"format-ethernet": "󰈀 ",
+	"format-disconnected": " "
+    },
+   
+    "cpu": {
+        "format": " {load}%"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {bt}",
+        "format-muted": "󰝟 {volume}% {bt}",
+        "icons": ["󰕾", "󰕾", "󰕾"]
+    },
+    "clock#time": {
+        "format": " {:L%H:%M}",
+	"on-click": "pkill mangobar && mangobar -c ~/.config/mangobar/small.jsonc ~/.config/mangobar/small.css"
+    },
+    "custom/power": {
+        "format": "",
+	"on-click": "poweroff"
+    },
+
+    "custom/text": {
+	"format": "Nixos-btw",
+    },
+    "tray": {
+        "icon-size": 25,
+        "spacing": 10
+    }
+
+
+}
