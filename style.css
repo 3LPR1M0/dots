@@ -1,0 +1,115 @@
+* {
+    font-family: "Maple Mono NF";
+    font-size: 10px;
+    font-weight: bold;
+}
+
+* {
+    color:  #c0caf5;
+    background-color: #24283b;
+    padding: 0px 10px;
+    margin: 5px 1px;
+    border-radius: 100px;
+}
+
+#bar {
+    background: none;
+    margin: 5px 10px;
+}
+#bar.sel {
+    background: none;
+}
+
+#tags {
+    padding: 0px 10px;
+    margin: 0px 2px;
+}
+
+#tags.active {
+    background-color: #c0caf5;
+    color: #24283b;
+}
+#tags.occupied {
+    background-color: #24283b;
+    color: #c0caf5;
+}
+#tags.urgent {
+    background-color: #fb4934;
+    color: #1b1a1a;
+}
+#tags.empty {
+    background-color: #24283b;
+    color: #c0caf5;
+}
+
+#overview {
+    background-color: #24283b;
+    color: #c0caf5;
+}
+
+#layout {
+    background-color: #24283b;
+    color: #c0caf5;
+    min-width: 34px;
+    margin: 5px 5px;
+}
+
+#title {
+    background-color: #c0caf5;
+    color: #1a1b26;
+}
+
+#clock {
+    background-color: #24283b;
+    color: #c0caf5;
+}
+#cpu {
+    padding: 0px 15px;
+    background-color: #24283b;
+    color: #c0caf5;
+}
+#mem {
+    background-color: #24283b;
+    color: #c0caf5;
+#volume {
+    background-color:  #1a1b26;
+    color: #c0caf5;
+}
+#network {
+    background-color: #c0caf5;
+    color: #1a1b26;
+}
+#custom-power {
+    margin: 0px 5px;
+    background-color: #c0caf5;
+    color: #1a1b26;
+}
+
+#custom-text {
+    background-color: #24283b;
+    color: #c0caf5;
+
+#tray {
+    background-color: #6B645A;
+    padding: 0px 15px;
+}
+
+menu {
+    background-color: #201B14;
+    border-color: #ebdbb2;
+    border-radius: 10px;
+    font-size: 14px;
+}
+menuitem {
+    color: #ebdbb2;
+}
+menuitem:hover {
+    color: #c0caf5;
+    background-color: #1b1a1a;
+}
+
+#workspaces button:hover {
+    background-color: #7aa2f7;
+    color: #1a1b26;            
+}
+
